@@ -1,0 +1,24 @@
+{
+  "location": {
+    "city": "Santiago",
+    "country_code": "CL",
+    "latitude": -33.45,
+    "longitude": -70.66
+  },
+  "display": {
+    "width": 480,
+    "height": 320,
+    "fullscreen": true,
+    "hide_mouse": true,
+    "fps": 5,
+    "weather_update_interval_sec": 900
+  },
+  "deployment": {
+    "raspberry_ip": "192.168.1.XXX",
+    "raspberry_user": "pi",
+    "raspberry_password": "YOUR_PASSWORD_HERE",
+    "raspberry_port": 22,
+    "remote_dir": "/home/pi/Proyectos/weather_clock",
+    "local_file": "clock.py"
+  }
+}
