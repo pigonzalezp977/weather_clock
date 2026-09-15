@@ -103,7 +103,7 @@ for name in icon_names:
     if os.path.isfile(path):
         try:
             img = pygame.image.load(path)
-            if name in ("moon.png", "cloudy-night.png"):
+            if name in ("moon.png", "cloudy-night.png", "cloudy-day.png"):
                 img = img.convert()
                 img.set_colorkey((0, 0, 0))
             else:
