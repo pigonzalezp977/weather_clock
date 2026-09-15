@@ -14,18 +14,22 @@ Muestra la hora, fecha, condiciones meteorológicas en tiempo real (temperatura,
 ## 📸 Distribución de la Pantalla (480 x 320 px)
 
 ```text
-+-------------------------------------------------------------------+
-|  Santiago [ CL ] [ NOCHE ]                                        |
-|                                                                   |
-|   23:59  42 (amarillo)                                            |
-|                                         +------------------+      |
-|                                         |                  |      |
-|  12/09/2026 Sáb                         |   Ícono Clima    |      |
-|                                         |   (Luna / Sol)   |      |
-|  Temp: 10°C                             |                  |      |
-|  Hum:  76%                              +------------------+      |
-|                                              Despejado            |
-+-------------------------------------------------------------------+
++-------------------------------------------------------------------------------+
+|  Santiago [ CL ] [ DÍA ]                                                     |
+|                                                                               |
+|   13:18  42 (amarillo)                     [ Ícono Actual 72x72 ]             |
+|   15/09/2026 Mar (verde)                         Despejado                    |
+|   Temp: 27°C   Hum: 45% (cian)                                                |
++-------------------------------------------------------------------------------+
+|  PRONÓSTICO 5 DÍAS                                                            |
+|  +---------+   +---------+   +---------+   +---------+   +---------+          |
+|  |   MIÉ   |   |   JUE   |   |   VIE   |   |   SÁB   |   |   DOM   |          |
+|  |  16/09  |   |  17/09  |   |  18/09  |   |  19/09  |   |  20/09  |          |
+|  | [Icono] |   | [Icono] |   | [Icono] |   | [Icono] |   | [Icono] |          |
+|  | Max 26° |   | Max 28° |   | Max 27° |   | Max 27° |   | Max 18° | (naranja)|
+|  | Min 14° |   | Min 14° |   | Min 14° |   | Min 14° |   | Min 11° | (celeste)|
+|  +---------+   +---------+   +---------+   +---------+   +---------+          |
++-------------------------------------------------------------------------------+
 ```
 
 ---
@@ -33,10 +37,11 @@ Muestra la hora, fecha, condiciones meteorológicas en tiempo real (temperatura,
 ## ✨ Características Principales
 
 - **Reloj Digital Preciso**: Formato `HH:MM` en gran tamaño con segundero `SS` en amarillo.
+- **Pronóstico Meteorológico Semanal (5 Días)**: 5 tarjetas individuales con el día de la semana en español, fecha (`DD/MM`), mini ícono meteorológico y temperaturas Máxima (cálida) y Mínima (fría).
 - **Detección Astronómica Día / Noche**: Utiliza la coordenada solar de la API para saber con exactitud si es de día o de noche:
   - ☀️ De día: Muestra ícono de sol y etiqueta `[ DÍA ]`.
   - 🌙 De noche: Muestra luna creciente con estrellas y etiqueta `[ NOCHE ]`.
-- **Iconografía Meteorológica Adaptativa**: Soporte para cielo despejado, parcialmente nublado, nublado, lluvia, nieve y tormenta.
+- **Iconografía Meteorológica Adaptativa**: Soporte para cielo despejado, parcialmente nublado, nublado, lluvia, nieve y tormenta en dos tamaños (72x72 px y 32x32 px).
 - **Peticiones Asíncronas (Multihilo)**: La consulta meteorológica se procesa en segundo plano (`threading.Thread`), evitando pausas o saltos en el segundero.
 - **Consumo Ultra Bajo**: Limitado a 5 FPS (`clock.tick(5)`), manteniendo la Raspberry Pi fría y con uso de CPU inferior al 3%.
 - **Sin Claves de API**: Conexión a la API gratuita de [Open-Meteo](https://open-meteo.com/) sin registrar tarjetas ni tokens.
